@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
@@ -9,10 +8,52 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <title>Home Page</title>
+    <style>
+      .container {
+        max-width: 400px;}
+
+        .main {
+          margin-top: 50%;
+          border: 4px solid black;
+          background-color :aliceblue;
+          width: 600px;
+          height: 450px;
+          text-align: center;
+        }
+        h2{
+          color: brown;
+          font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+        }
+       
+    </style>
   </head>
-  <body>
-    <h1>Home Page</h1>
-    //<a href="{% url 'logout' %}" class="btn btn-primary">Logout</a>
+  <body style="background-image: url(https://wallpaperaccess.com/full/1732235.jpg);">
+
+    <div class="container">
+      
+<div class="rows">
+  <div class="col-sm-1"></div>
+  <div class="col-sm-10 main">
+      <form method="post" enctype="multipart/form-data">
+        {% csrf_token %} 
+        <h2><b>Upload File</b></h2>
+        <img src="https://www.lifewire.com/thmb/yLFRNBmwLcKDRnkaZ0B0nXgLAQM=/960x640/filters:no_upscale():max_bytes(150000):strip_icc()/upload-2c485b5b6fef41f39a05afb9adfce03e.png" height="150px" width="280px">
+        <br>
+        <br>
+        <div class="form-group">
+          <input type="file" name="file" class="form-control-file">
+        </div>
+        <button type="submit" class="btn btn-success">Upload</button>
+      </form>
+      <br><br>
+      <div > <a href="{% url 'logout' %}" class="btn btn-primary" style="border: 2px solid black;">Logout</a></div>
+       
+        </div>
+        
+        <div class="col-sm-1"></div>
+    </div>
+    </div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
